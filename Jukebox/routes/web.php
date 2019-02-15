@@ -13,3 +13,5 @@
 
 Route::get('/jukebox/edit', 'HomepageController@index');
 Route::post('/jukebox/edit', 'HomepageController@index');
+
+Route::get("/jukebox/list", "HomepageController@show_list");

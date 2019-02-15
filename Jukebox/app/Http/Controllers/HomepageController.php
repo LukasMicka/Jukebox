@@ -10,7 +10,6 @@ class HomepageController extends Controller
 {
     public function index(Request $request)
     {
-        var_dump($_POST);
 
         if ($request->has('id')) {
             // this is editing an existing record
@@ -107,6 +106,13 @@ class HomepageController extends Controller
 
         return view('jukebox/jukebox', [
             "content" => $edit_form
+        ]);
+    }
+
+    public function show_list()
+    {
+        $list = view("jukebox/list", [
+            "record_list" => $record
         ]);
     }
 }

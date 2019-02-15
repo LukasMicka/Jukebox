@@ -1,3 +1,13 @@
+<?php if (Session::has("success_message")) : ?>
+    <div class="alert-success">
+    
+    <?= Session::get("success_message") ?>
+    
+    </div>
+<?php endif; ?> 
+
+<br>
+
 <form action="" method="post">
 <?php echo csrf_field() ?>
 <label for="">Author:</label><br>
