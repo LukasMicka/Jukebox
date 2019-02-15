@@ -12,3 +12,4 @@
 */
 
 Route::get('/', 'HomepageController@index');
+Route::post('/', 'HomepageController@index');
