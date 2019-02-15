@@ -97,16 +97,16 @@ class HomepageController extends Controller
             }
 
             Session::flash("success_message", "Song has been successfully submitted.");
-
-            return redirect("jukebox/edit?id=" . $record->id);
+            
+            return redirect("jukebox/edit?id=".$record->id);
         }
 
-        return view('jukebox', [
-            "author" => $record->author,
-            "song" => $record->song,
-            "code" => $record->code,
-            "URL" => $record->URL,
-            "added" => $record->added,
+        $edit_form = view("jukebox/edit", [
+            "record" => $record
+        ]);
+
+        return view('jukebox/jukebox', [
+            "content" => $edit_form
         ]);
     }
 }

@@ -11,5 +11,5 @@
 |
 */
 
-Route::get('/', 'HomepageController@index');
-Route::post('/', 'HomepageController@index');
+Route::get('/jukebox/edit', 'HomepageController@index');
+Route::post('/jukebox/edit', 'HomepageController@index');
