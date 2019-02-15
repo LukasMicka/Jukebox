@@ -91,7 +91,14 @@ class HomepageController extends Controller
                     $record->URL,
                     $record->added
                 ]);
+
+                $record->id = DB::getPdo()->lastInsertId();
+
             }
+
+            Session::flash("success_message", "Song has been successfully submitted.");
+
+            return redirect("jukebox/edit?id=" . $record->id);
         }
 
         return view('jukebox', [
